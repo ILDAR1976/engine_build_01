@@ -70,30 +70,20 @@ public class DummyGame implements IGameLogic {
         renderer.init(EWindow);
 
         scene = new Scene();
-        String fileName = Thread.currentThread().getContextClassLoader()
-                .getResource("models/terrain/terrain.obj").getFile();
         File file = new File("./source/models/terrain/terrain.obj");
-        Mesh[] terrainMesh = StaticMeshesLoader.load(file.getAbsolutePath(), "/models/terrain");
+        Mesh[] terrainMesh = StaticMeshesLoader.load(file.getAbsolutePath(), "./source/models/terrain");
         GameItem terrain = new GameItem(terrainMesh);
         terrain.setScale(100.0f);
-        /*
-        fileName = Thread.currentThread().getContextClassLoader()
-                .getResource("./source/models/house/house.obj").getFile();
-        */
-        file = new File("./source/models/house/house.obj");
-        Mesh[] mesh = StaticMeshesLoader.load(file.getAbsolutePath(), "/models/house");
         
+        file = new File("./source/models/house/house.obj");
+        Mesh[] mesh = StaticMeshesLoader.load(file.getAbsolutePath(), "./source/models/house");
         GameItem house = new GameItem(mesh);
-
         house.setScale(0.2f);
         house.setPosition(-4f, 0f, 0f);
         
- /*       fileName = Thread.currentThread().getContextClassLoader()
-                .getResource("./source/models/bob/boblamp.md5mesh").getFile();
- */       
         file = new File("./source/models/bob/boblamp.md5mesh");
         
-        animItem = AnimMeshesLoader.loadAnimGameItem(file.getAbsolutePath(), "");
+        animItem = AnimMeshesLoader.loadAnimGameItem(file.getAbsolutePath(), "./source/");
         animItem.setScale(0.05f);
         animItem.setPosition(0f, 0f, 0f);
         animation = animItem.getCurrentAnimation();
@@ -129,9 +119,6 @@ public class DummyGame implements IGameLogic {
 
         // Setup  SkyBox
         float skyBoxScale = 100.0f;
-/*        fileName = Thread.currentThread().getContextClassLoader()
-                .getResource("./source/models/skybox.obj").getFile();
-*/      
         file = new File("./source/models/skybox.obj");
         SkyBox skyBox = new SkyBox(file.getAbsolutePath(), new Vector4f(0.65f, 0.65f, 0.65f, 1.0f));
         skyBox.setScale(skyBoxScale);

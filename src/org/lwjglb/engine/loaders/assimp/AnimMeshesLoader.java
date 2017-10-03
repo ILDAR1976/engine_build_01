@@ -76,9 +76,8 @@ public class AnimMeshesLoader extends StaticMeshesLoader {
             throws Exception {
     	
     	System.out.println(resourcePath);
-    	//String fileName = Thread.currentThread().getContextClassLoader().getResource(resourcePath).getFile();
-        
-        File file = new File(resourcePath);
+       
+    	File file = new File(resourcePath);
     	
         AIScene aiScene = aiImportFile(resourcePath, flags);
         if (aiScene == null) {

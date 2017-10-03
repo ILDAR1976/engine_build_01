@@ -152,7 +152,7 @@
 									<mainClass>${class}</mainClass>
 								</transformer>
 							</transformers>
-							<finalName>lwjgl3-demos</finalName>
+							<finalName>lwjgl</finalName>
 						</configuration>
 					</execution>
 				</executions>
